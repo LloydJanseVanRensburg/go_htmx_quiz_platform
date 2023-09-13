@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "app",
+            "database": "${workspaceFolder:go_htmx_quiz_platform}/app.db"
+        }
+    ]
+}
