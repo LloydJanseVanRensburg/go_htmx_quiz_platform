@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="/public/styles.css">
-    <script src="https://unpkg.com/htmx.org@1.9.5"
-        integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
-        crossorigin="anonymous"></script>
-</head>
+{{ template "head-tag.html" "Quiz App"}}
 
 <body>
     {{ template "header.html" "Quiz App"}}
 
-    <div class="categories-grid">
+    <div class="container categories-grid">
         {{ range .categories }}
         {{ template "category-card.html" . }}
         {{ end }}

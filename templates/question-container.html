@@ -1,0 +1,12 @@
+<div class="question_container">
+    <p class="question_text">{{ .Question }}</p>
+
+    <div class="question_options">
+        {{ range .Options }}
+        <input type="radio" name="{{.QuestionID}}" value="{{.ID}}" id="{{.ID}}" />
+        <label for="{{.ID}}">
+            {{.Text}}
+        </label>
+        {{ end }}
+    </div>
+</div>

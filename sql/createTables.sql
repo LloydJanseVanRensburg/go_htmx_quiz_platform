@@ -8,14 +8,19 @@ CREATE TABLE IF NOT EXISTS questions (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   question TEXT NOT NULL,
   category_id INTEGER NOT NULL,
-  correct_answer_id INTEGER NOT NULL,
-  FOREIGN KEY (category_id) REFERENCES categories (id),
-  FOREIGN KEY (correct_answer_id) REFERENCES options (id)
+  FOREIGN KEY (category_id) REFERENCES categories (id)
 );
 
 CREATE TABLE IF NOT EXISTS options (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   text TEXT NOT NULL,
+  question_id INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS question_answer (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   question_id INTEGER NOT NULL,
-  FOREIGN KEY (question_id) REFERENCES questions (id)
+  option_id INTEGER NOT NULL,
+  FOREIGN KEY (question_id) REFERENCES questions (id),
+  FOREIGN KEY (option_id) REFERENCES options (id)
 );
