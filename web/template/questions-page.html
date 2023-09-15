@@ -1,0 +1,23 @@
+{{ template "head-tag.html" "Category Questions"}}
+
+<body>
+    {{ template "header.html" "Category Questions"}}
+
+    <form class="container" hx-post="/score" hx-swap="none" name="test">
+        {{ range .questions }}
+        {{ template "question-container.html" .}}
+        {{ end }}
+
+        {{ if .done }}
+        <div class="submit_btn">
+            <button>Retry</button>
+            <button>Next</button>
+        </div>
+        {{ else }}
+        <div class="submit_btn">
+            <button type="submit">Submit</button>
+        </div>
+        {{ end }}
+    </form>
+
+</body>

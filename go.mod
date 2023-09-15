@@ -1,4 +1,4 @@
-module github.com/go_htmx_quiz_app
+module github.com/LloydJanseVanRensburg/go_htmx_quiz_app
 
 go 1.21.0
 
